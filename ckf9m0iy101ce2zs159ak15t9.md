@@ -6,7 +6,9 @@ Recently I had to write an app that synchronizes queues with databases. Pretty d
 
 1. Transaction manager. You need transaction manager. I've chosen the Bitronix JTA Transaction Manager. Open source and free. The role of transaction manager is to track the state of distributed transaction on bulletproof way. Note that for it uses synchronized log files that are keep locally (here I've put them under 'run' directory). In your Gradle build script you need the following dependency:
 
-```compile("org.codehaus.btm:btm:2.1.4")```
+```
+compile("org.codehaus.btm:btm:2.1.4")
+```
 
 2. Enabling transactions support and configuring JTA ransaction manager. It can be easily one by adding @Configuration annotated class.
 
